@@ -1,3 +1,16 @@
 #Languaje CI
 language: go
 go: 1.11.x
+
+deploy:
+  - provider: s3
+⋮ # rest of S3 deployment for MyApp.zip
+organization_name: fabian-portillo/go-example
+access_key_id: "AWS_ACCESS_KEY"
+secret_access_key: "AWS_SECRET_KEY"
+skip_cleanup: true
+application: fabian
+region: eu-central-1
+deployment_group: MyDeploymentGroup
+   on:
+     branch: master
